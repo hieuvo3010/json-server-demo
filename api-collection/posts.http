@@ -1,0 +1,35 @@
+
+@baseURL = http://localhost:3000/api
+
+
+# posts
+
+# @name getAllposts
+GET {{baseURL}}/posts
+
+
+###
+
+# @name addNewPost
+POST http://localhost:3000/api/posts
+Content-Type: application/json;
+
+{
+    "createdAt": "Ashiba"
+}
+
+###
+
+# @name updatePost
+PATCH  http://localhost:3000/api/posts/3
+Content-Type: application/json;
+
+{
+    "title": "Ashiba KHANG"
+}
+
+###
+
+# @name removePost
+DELETE   {{baseURL}}/posts/7
+

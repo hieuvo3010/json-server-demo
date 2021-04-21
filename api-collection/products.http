@@ -1,0 +1,61 @@
+
+@baseURL=http://localhost:3000/api
+
+@resourceName=products
+
+# posts
+
+# @name getAll
+GET {{baseURL}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseURL}}/{{resourceName}}?price_gte=200
+
+###
+
+
+# @name pagination
+GET {{baseURL}}/{{resourceName}}?page=1&_limit=4
+###
+
+# @name sort
+GET {{baseURL}}/{{resourceName}}?_sort=price&order=asc
+###
+
+# @name addNew
+POST {{baseURL}}/{{resourceName}}
+Content-Type: application/json;
+
+{
+    "postsId": "7bb4d5a8-d44f-4792-9261-128eeca956e4",
+    "name": "Yến Trâm Vaaaaũ",
+    "color": "gold",
+    "price": 352,
+}
+
+###
+
+# @name update
+PATCH  http://localhost:3000/api/{{resourceName}}/LhVj5Uf
+Content-Type: application/json;
+
+{
+    "postsId": "7bb4d5a8-d44f-4792-9261-128eeca956e4",
+    "name": "HiếU Ashiba",
+    "color": "turquoise",
+    "price": 690,
+}
+
+###
+
+# @name remove
+DELETE   {{baseURL}}/{{resourceName}}/7
+
+###
+
+
+###
+# @name titleLike
+ {{baseURL}}/{{resourceName}}/?name_like=Hi
